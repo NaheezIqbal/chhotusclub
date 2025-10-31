@@ -35,7 +35,7 @@ const categoriesWithIcon = [
 const mockFeatureImages = [
   {
     _id: "1",
-    image: "/images/boy.jpg",
+    image: "/images/hero-1.jpg",
     title: "Kids Collection",
   },
   {
