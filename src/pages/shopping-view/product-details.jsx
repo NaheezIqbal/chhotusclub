@@ -78,7 +78,7 @@ function ProductDetailsPage() {
       productDetails?.salePrice > 0
         ? productDetails?.salePrice
         : productDetails?.price;
-    const message = `Hi! I'm interested in ordering:\n\n*${productName}*\nPrice: $${productPrice}\n\nPlease let me know the availability and delivery details.`;
+    const message = `Hi! I'm interested in ordering:\n\n*${productName}*\nPrice: Rs ${productPrice.toLocaleString('en-PK')}\n\nPlease let me know the availability and delivery details.`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
@@ -182,21 +182,21 @@ function ProductDetailsPage() {
               </p>
             </div>
 
-            {/* Price */}
-            <div className="mb-5 p-4 bg-orange-50 rounded-xl border border-orange-100">
-              <div className="flex items-baseline gap-3 flex-wrap">
-                {productDetails?.salePrice > 0 ? (
-                  <>
-                    <span className="text-4xl font-bold text-orange-600">
-                      ${productDetails?.salePrice}
-                    </span>
-                    <span className="text-2xl text-gray-400 line-through font-medium">
-                      ${productDetails?.price}
-                    </span>
-                    <span className="text-sm font-semibold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">
-                      Save ${productDetails?.price - productDetails?.salePrice}
-                    </span>
-                  </>
+           {/* Price */}
+          <div className="mb-6 p-6 bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl border-2 border-orange-200">
+            <div className="flex items-baseline gap-4">
+              {productDetails?.salePrice > 0 ? (
+                <>
+                  <span className="text-5xl font-bold text-orange-600">
+                    Rs {productDetails?.salePrice?.toLocaleString('en-PK') || productDetails?.salePrice}
+                  </span>
+                  <span className="text-3xl text-gray-400 line-through font-medium">
+                    Rs {productDetails?.price?.toLocaleString('en-PK') || productDetails?.price}
+                  </span>
+                  <span className="text-xl font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                    Save Rs {Number(productDetails?.price - productDetails?.salePrice)?.toLocaleString('en-PK')}
+                  </span>
+                </>
                 ) : (
                   <span className="text-4xl font-bold text-gray-800">
                     ${productDetails?.price}

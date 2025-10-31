@@ -27,7 +27,7 @@ function ShoppingFooter() {
             <div className="flex gap-4">
               <a
                 href="https://facebook.com"
-                target="_blank"
+                target="https://web.facebook.com/snbgarments"
                 rel="noopener noreferrer"
                 className="bg-gray-700 hover:bg-orange-500 p-2.5 rounded-full transition-all duration-300 transform hover:scale-110"
               >
@@ -35,7 +35,7 @@ function ShoppingFooter() {
               </a>
               <a
                 href="https://instagram.com"
-                target="_blank"
+                target="https://www.instagram.com/chhotusclub/?hl=en"
                 rel="noopener noreferrer"
                 className="bg-gray-700 hover:bg-pink-500 p-2.5 rounded-full transition-all duration-300 transform hover:scale-110"
               >
@@ -167,14 +167,14 @@ function ShoppingFooter() {
               <li className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 text-orange-400 flex-shrink-0 mt-1" />
                 <span className="leading-relaxed">
-                  123 Kids Fashion Street
+                  Johar town Wafaqi Colony
                   <br />
-                  New York, NY 10001
+                  Lahore, Pakistan
                 </span>
               </li>
               <li className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-colors duration-300">
                 <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="tel:+1234567890">+923185238498</a>
               </li>
               <li className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-colors duration-300">
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
@@ -241,8 +241,8 @@ function ShoppingFooter() {
               </a>
             </div>
             <p className="text-gray-400 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-current" />{" "}
-              for kids
+              Made by NAHEEZ for Chhotus Club
+              {/* <Heart className="w-4 h-4 text-red-500 fill-current" />{" "} */} 
             </p>
           </div>
         </div>

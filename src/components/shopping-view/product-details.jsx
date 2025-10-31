@@ -89,7 +89,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
       productDetails?.salePrice > 0
         ? productDetails?.salePrice
         : productDetails?.price;
-    const message = `Hi! I'm interested in ordering:\n\n*${productName}*\nPrice: $${productPrice}\n\nPlease let me know the availability and delivery details.`;
+   const message = `Hi! I'm interested in ordering:\n\n*${productName}*\nPrice: Rs ${productPrice.toLocaleString('en-PK')}\n\nPlease let me know the availability and delivery details.`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
@@ -167,7 +167,10 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                   <Badge className="absolute top-4 left-4 bg-orange-500 text-white px-4 py-2 text-base font-semibold shadow-lg">
                     Only {productDetails?.totalStock} left!
                   </Badge>
+                  
                 )}
+                console.log("Price type:", typeof productDetails?.price, "Value:", productDetails?.price);
+console.log("Sale Price type:", typeof productDetails?.salePrice, "Value:", productDetails?.salePrice);
             </div>
 
             {/* Action Buttons */}
@@ -210,29 +213,28 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             </span>
           </div>
 
-          {/* Price */}
+       {/* Price */}
           <div className="mb-6 p-6 bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl border-2 border-orange-200">
             <div className="flex items-baseline gap-4">
               {productDetails?.salePrice > 0 ? (
                 <>
                   <span className="text-5xl font-bold text-orange-600">
-                    ${productDetails?.salePrice}
+                    Rs {productDetails?.salePrice?.toLocaleString('en-PK') || productDetails?.salePrice}
                   </span>
                   <span className="text-3xl text-gray-400 line-through font-medium">
-                    ${productDetails?.price}
+                    Rs {productDetails?.price?.toLocaleString('en-PK') || productDetails?.price}
                   </span>
                   <span className="text-xl font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
-                    Save ${productDetails?.price - productDetails?.salePrice}
+                    Save Rs {Number(productDetails?.price - productDetails?.salePrice)?.toLocaleString('en-PK')}
                   </span>
                 </>
               ) : (
                 <span className="text-5xl font-bold text-gray-900">
-                  ${productDetails?.price}
+                  Rs {productDetails?.price?.toLocaleString('en-PK') || productDetails?.price}
                 </span>
               )}
             </div>
           </div>
-
           {/* Add to Cart Button */}
           <div className="mb-6 flex gap-3">
             {productDetails?.totalStock === 0 ? (

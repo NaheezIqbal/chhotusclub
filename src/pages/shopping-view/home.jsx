@@ -24,18 +24,18 @@ import { getFeatureImages } from "@/store/common-slice";
 // import { mockProducts } from "@/mock/products";
 
 const categoriesWithIcon = [
-  { id: "girls", label: "Girls Collection", image: "/images/1.jpg" },
-  { id: "boys", label: "Boys Collection", image: "/images/2.jpg" },
-  { id: "kids", label: "Kids Special", image: "/images/3.jpg" },
-  { id: "winter", label: "Winter Collection", image: "/images/4.jpg" },
-  { id: "new-arrivals", label: "New Arrivals", image: "/images/5.jpg" },
+  { id: "girls", label: "Girls Collection", image: "/images/Girls Collection.jpg" },
+  { id: "boys", label: "Boys Collection", image: "/images/boy.jpg" },
+  { id: "kids", label: "Kids Special", image: "/images/kids special.jpg" },
+  { id: "winter", label: "Winter Collection", image: "/images/winter collection2.jpg" },
+  { id: "new-arrivals", label: "New Arrivals", image: "/images/new arrival.jpg" },
 ];
 
 // Mock data for hero banners based on Chhotu's Club design
 const mockFeatureImages = [
   {
     _id: "1",
-    image: "/images/hero-1.jpg",
+    image: "/images/boy.jpg",
     title: "Kids Collection",
   },
   {
@@ -53,89 +53,90 @@ const mockFeatureImages = [
 // Mock products data based on the screenshot
 const mockProducts = [
   {
-    _id: "1",
-    title: "Cute Bear Kids Tracksuit",
+ _id: "1",
+    title: "3D Butterfly Yellow Kids Tracksuit Set",
     description: "Comfortable tracksuit for boys",
-    image: "/images/1.jpg",
-    price: 45,
-    salePrice: 35,
+    image: "/images/3D Butterfly Yellow Kids Sweatshirt & Jogger Set.jpg",
+    price: 3800,
+    salePrice: 2800,
     category: "kids",
     brand: "chhotu",
     totalStock: 15,
   },
   {
-    _id: "2",
-    title: "Graphic Sweatshirt and Jeans Set",
+     _id: "2",
+    title: "Chhotus Brand Tag Tracksuit Set",
     description: "Stylish casual wear for boys",
-    image: "/images/2.jpg",
-    price: 52,
-    salePrice: 42,
+    image: "/images/Chhotus Brand Tag Tracksuit Set.jpg",
+    price: 3500,
+    salePrice: 2800,
     category: "kids",
     brand: "chhotu",
     totalStock: 12,
+  
   },
   {
     _id: "3",
-    title: "Always Be Humble & Kind Hoodie Set",
+    title: "Pop Girl Vibe Set",
     description: "Cozy hoodie with matching joggers",
-    image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400",
-    price: 48,
-    salePrice: 38,
+    image: "/images/Pop Girl Vibe Set.jpg",
+    price: 3500,
+    salePrice: 2800,
     category: "kids",
     brand: "chhotu",
-    totalStock: 20,
+    totalStock: 6,
   },
   {
     _id: "4",
-    title: "Charcoal Club Polo & Jeans Set",
+    title: "Batman Kids Hoodie & Jogger Set – Cozy Superhero Outfit",
     description: "Smart casual outfit for boys",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
-    price: 55,
-    salePrice: 45,
+    image: "/images/Batman Kids Hoodie & Jogger Set – Cozy Superhero Outfit.jpg",
+    price: 3800,
+    salePrice: 2800,
     category: "kids",
     brand: "chhotu",
     totalStock: 8,
   },
   {
     _id: "5",
-    title: "Girls Pink Sweatshirt & Joggers",
+    title: "Kids Minnie Mouse Sweatshirt & Jogger Set",
     description: "Comfortable athleisure for girls",
-    image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=400",
-    price: 42,
-    salePrice: 32,
+    image: "/images/Kids Minnie Mouse Sweatshirt & Jogger Set.jpg",
+    price: 3500,
+    salePrice: 1800,
     category: "kids",
     brand: "chhotu",
     totalStock: 18,
   },
   {
     _id: "6",
-    title: "Cute Pink Tracksuit",
+    title: "Minnie Mouse Pastel Lilac Kids Sweatshirt",
     description: "Adorable pink tracksuit for girls",
-    image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=400",
-    price: 40,
-    salePrice: 30,
+    image: "/images/Minnie Mouse Pastel Lilac Kids Sweatshirt.jpg",
+    price: 4000,
+    salePrice: 3000,
     category: "kids",
     brand: "chhotu",
     totalStock: 14,
   },
   {
     _id: "7",
-    title: "Winter Hoodie with Graphics",
+    title: "Workholic Kids Hoodie suit",
     description: "Warm and stylish winter wear",
-    image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400",
-    price: 50,
-    salePrice: 40,
+    image: "/images/Workholic Kids Hoodie suit.jpg",
+    price: 3000,
+    salePrice: 1998,
     category: "kids",
     brand: "chhotu",
     totalStock: 10,
   },
   {
     _id: "8",
-    title: "Navy Printed Tracksuit",
+    title: "Nixxin Tracksuit kids",
     description: "Classic navy tracksuit with prints",
-    image: "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400",
-    price: 46,
-    salePrice: 36,
+    image: "/images/Nixxin Tracksuit kids.jpg",
+    price: 4200,
+    salePrice: 3600,
     totalStock: 16,
   },
 ];
@@ -527,11 +528,13 @@ function ShoppingHome() {
           </p>
           <div className="flex gap-4 justify-center">
             <Button
-              variant="secondary"
+        
+              variant="outline"
               size="lg"
-              onClick={() => navigate("/auth/register")}
-              className="bg-white text-orange-600 hover:bg-gray-100 font-semibold px-8 py-3"
+              onClick={() => navigate("/auth/login")}
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-semibold px-8 py-3"
             >
+          
               Sign Up Now
             </Button>
             <Button

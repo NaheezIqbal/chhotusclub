@@ -70,24 +70,23 @@ function ShoppingProductTile({
                 {brandOptionsMap[product?.brand]}
               </span>
             </div>
-
-            {/* Price */}
-            <div className="flex items-center gap-3 mt-auto">
-              {product?.salePrice > 0 ? (
-                <>
-                  <span className="text-2xl font-bold text-orange-600">
-                    ${product?.salePrice}
-                  </span>
-                  <span className="text-lg text-gray-400 line-through font-medium">
-                    ${product?.price}
-                  </span>
-                </>
-              ) : (
-                <span className="text-2xl font-bold text-gray-800">
-                  ${product?.price}
-                </span>
-              )}
-            </div>
+{/* Price */}
+<div className="flex items-center gap-3 mt-auto">
+  {product?.salePrice > 0 ? (
+    <>
+      <span className="text-2xl font-bold text-orange-600">
+        Rs {product?.salePrice.toLocaleString('en-PK')}
+      </span>
+      <span className="text-lg text-gray-400 line-through font-medium">
+        Rs {product?.price.toLocaleString('en-PK')}
+      </span>
+    </>
+  ) : (
+    <span className="text-2xl font-bold text-gray-800">
+      Rs {product?.price.toLocaleString('en-PK')}
+    </span>
+  )}
+</div>
           </CardContent>
         </div>
 

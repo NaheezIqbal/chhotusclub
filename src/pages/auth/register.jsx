@@ -60,6 +60,12 @@ function AuthRegister() {
         setFormData={setFormData}
         onSubmit={onSubmit}
       />
+        <Link
+          to="/shop/home"
+          className="inline-block mt-3 px-4 py-2 bg-primary text-primary-foreground font-bold rounded-lg shadow-md hover:bg-primary/90 hover:shadow-lg transition-all duration-200 hover:scale-105"
+        >
+          Back to Home
+        </Link>
     </div>
   );
 }
